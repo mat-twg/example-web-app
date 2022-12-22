@@ -13,7 +13,6 @@ const Demo = ({ data }: { data: Entity[] }): JSX.Element => {
 
   const [entityData, setEntityData] = useState<string>();
   const [connection, setConnection] = useState<Socket>();
-
   useEffect(() => {
     if (!connection) {
       const socket = io('http://localhost:3000', { transports: ['websocket'] });
