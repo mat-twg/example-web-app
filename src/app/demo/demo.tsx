@@ -8,7 +8,6 @@ const Demo = ({ data }: { data: Entity[] }) => {
   const table = useContext(TableContext);
   useEffect(() => {
     table.load(data);
-
     return () => table.reset();
   }, [table, data]);
 
@@ -21,9 +20,8 @@ const Demo = ({ data }: { data: Entity[] }) => {
       socket.on('data-source', setEntityData);
       setConnection(socket);
     }
-
     return () => {
-      connection ? connection.disconnect() : null;
+      connection?.disconnect();
     };
   }, [connection]);
 

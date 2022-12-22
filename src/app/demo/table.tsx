@@ -138,10 +138,10 @@ class Table {
       .flat();
   }
 
-  public calc(type: string, columnIdx: number): number {
+  public calc(action: BtnGroupItemAction, columnIdx: number): number {
     const column = this.getColumn(columnIdx);
 
-    switch (type) {
+    switch (action) {
       case BtnGroupItemAction.SUM:
         return +column.reduce((a, c) => a + c).toFixed(4);
       case BtnGroupItemAction.MIN:
