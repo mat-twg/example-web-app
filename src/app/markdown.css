@@ -1,0 +1,32 @@
+.markdown{
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.markdown > p:has(img){
+    text-align: center;
+}
+
+img{
+    max-width: 100%;
+}
+
+table{
+    max-width: 100%;
+    border:1px solid rgba(255,255,255,.25);
+    margin-bottom: 20px;
+}
+
+table th{
+    border:1px solid rgba(255,255,255,.25);
+    border-bottom: none;
+    padding: 4px;
+    background-color: rgba(255,255,255,.1);
+}
+
+table td{
+    padding: 4px;
+    border:1px solid rgba(255,255,255,.1);
+}
