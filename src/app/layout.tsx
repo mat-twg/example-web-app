@@ -5,7 +5,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Navbar from '../components/navbar';
 
-export default function Layout({ children }: { children?: ReactNode }) {
+export default function Layout({
+  children,
+}: {
+  children?: ReactNode;
+}): JSX.Element {
   return (
     <html lang="en" className="min-vh-100 h-100">
       <head>

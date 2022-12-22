@@ -6,11 +6,11 @@ import './navbar.css';
 
 const navItems = [
   { text: 'Home', href: '/' },
-  { text: 'Schema', href: '/schema', prefetch: false },
+  { text: 'Schema', href: '/schema' },
   { text: 'Demo', href: '/demo', prefetch: false },
 ];
 
-const Navbar = () => {
+const Navbar = (): JSX.Element => {
   const pathname = usePathname();
 
   return (

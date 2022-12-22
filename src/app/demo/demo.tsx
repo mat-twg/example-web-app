@@ -4,7 +4,7 @@ import { useContext, useEffect, useState } from 'react';
 import { io, Socket } from 'socket.io-client';
 import { Entity, TableContext } from './table';
 
-const Demo = ({ data }: { data: Entity[] }) => {
+const Demo = ({ data }: { data: Entity[] }): JSX.Element => {
   const table = useContext(TableContext);
   useEffect(() => {
     table.load(data);

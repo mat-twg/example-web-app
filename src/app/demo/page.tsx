@@ -1,6 +1,7 @@
 import Demo from './demo';
+import { Entity } from './table';
 
-const getData = async () => {
+const getEntityList = async (): Promise<Entity[]> => {
   const res = await fetch('http://localhost:3000/entity/list', {
     cache: 'no-store',
   });
@@ -10,6 +11,6 @@ const getData = async () => {
   return res.json();
 };
 
-export default async function Page() {
-  return <Demo data={await getData()} />;
+export default async function Page(): Promise<JSX.Element> {
+  return <Demo data={await getEntityList()} />;
 }

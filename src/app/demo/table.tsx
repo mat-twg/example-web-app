@@ -39,9 +39,7 @@ const BtnGroupItem = ({
   return (
     <button
       className={'btn btn-dark' + (active === action ? ' active' : '')}
-      onClick={() => {
-        setActive(action);
-      }}
+      onClick={() => setActive(action)}
     >
       {action}
     </button>
@@ -155,7 +153,7 @@ class Table {
     }
   }
 
-  private renderHead(): any {
+  private renderHead(): JSX.Element {
     return (
       <thead>
         <tr>
@@ -167,7 +165,7 @@ class Table {
     );
   }
 
-  private renderBody(): any {
+  private renderBody(): JSX.Element {
     return (
       <tbody>
         {this.body.map((row: any[], rowId) => (
@@ -185,7 +183,7 @@ class Table {
     );
   }
 
-  private renderFoot(): any {
+  private renderFoot(): JSX.Element {
     return (
       <tfoot>
         <tr>
@@ -206,7 +204,7 @@ class Table {
     );
   }
 
-  render(): any {
+  render(): JSX.Element {
     return (
       <table className={'table table-dark table-bordered table-custom'}>
         {this.renderHead()}
