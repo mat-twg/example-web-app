@@ -11,8 +11,8 @@ const Demo = ({ data }: { data: Entity[] }): JSX.Element => {
     return () => table.reset();
   }, [table, data]);
 
-  const [entityData, setEntityData] = useState<string>();
   const [connection, setConnection] = useState<Socket>();
+  const [entityData, setEntityData] = useState<string>();
   useEffect(() => {
     if (!connection) {
       const socket = io('http://localhost:3000', { transports: ['websocket'] });
