@@ -6,6 +6,7 @@ import {
   useState,
 } from 'react';
 import './table.css';
+import { contrast, rgba2rgb } from '../../helpers/color-helper';
 
 export type Entity = {
   _id: string;
@@ -170,13 +171,30 @@ class Table {
       <tbody>
         {this.body.map((row: any[], rowId) => (
           <tr key={rowId}>
-            {row.map((col, idx) =>
-              idx === 0 ? (
-                <th key={'body_' + rowId + '_' + idx}>{col}</th>
-              ) : (
-                <td key={'body_' + rowId + '_' + idx}>{col}</td>
-              ),
-            )}
+            {row.map((col, idx) => {
+              if (idx === 0) {
+                return <th key={'body_' + rowId + '_' + idx}>{col}</th>;
+              }
+              const color =
+                col > 0
+                  ? `rgba(0,0,0,${Math.abs(col)})`
+                  : col < 0
+                  ? `rgba(255,140,0,${Math.abs(col)})`
+                  : `rgb(255,255,255)`;
+              return (
+                <td
+                  key={'body_' + rowId + '_' + idx}
+                  style={{
+                    backgroundColor: `${color}`,
+                    color: `${contrast(
+                      rgba2rgb(color, 255, 255, 255) ?? 'transparent',
+                    )}`,
+                  }}
+                >
+                  {col}
+                </td>
+              );
+            })}
           </tr>
         ))}
       </tbody>
@@ -206,7 +224,7 @@ class Table {
 
   render(): JSX.Element {
     return (
-      <table className={'table table-dark table-bordered table-custom'}>
+      <table className={'table table-dark table-bordered table-custom mt-3'}>
         {this.renderHead()}
         {this.renderBody()}
         {this.renderFoot()}

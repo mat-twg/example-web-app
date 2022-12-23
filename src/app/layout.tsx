@@ -16,14 +16,14 @@ export default function Layout({
         <title>Example</title>
       </head>
       <body className="d-flex min-vh-100 text-center text-white bg-dark">
-        <div className="d-flex w-75 p-3 mx-auto flex-column">
-          <header className="mb-auto">
+        <div className="d-flex w-100 p-3 mx-auto flex-column">
+          <header className="mb-auto w-75 align-self-center">
             <div>
               <h3 className="float-md-start mb-0">Example</h3>
             </div>
             <Navbar />
           </header>
-          <main className={'d-block'}>{children}</main>
+          <main className={'d-flex w-100 flex-column'}>{children}</main>
           <footer className="mt-auto text-white-50 text-center">
             <p>
               Cover template for{' '}

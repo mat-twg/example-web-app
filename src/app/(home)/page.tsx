@@ -11,8 +11,13 @@ export default async function Page(): Promise<JSX.Element> {
   );
 
   return (
-    <ReactMarkdown className={'markdown p-4 mt-3'} remarkPlugins={[remarkGfm]}>
-      {fileContents.toString()}
-    </ReactMarkdown>
+    <div className={'w-75 align-self-center'}>
+      <ReactMarkdown
+        className={'markdown p-4 mt-3'}
+        remarkPlugins={[remarkGfm]}
+      >
+        {fileContents.toString()}
+      </ReactMarkdown>
+    </div>
   );
 }
