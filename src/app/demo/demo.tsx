@@ -3,6 +3,7 @@
 import { useContext, useEffect, useState } from 'react';
 import { io, Socket } from 'socket.io-client';
 import { Entity, TableContext } from './table';
+import * as process from 'process';
 
 const Demo = ({ data }: { data: Entity[] }): JSX.Element => {
   const table = useContext(TableContext);
@@ -15,7 +16,8 @@ const Demo = ({ data }: { data: Entity[] }): JSX.Element => {
   const [entityData, setEntityData] = useState<string>();
   useEffect(() => {
     if (!connection) {
-      const socket = io('http://localhost:3000', { transports: ['websocket'] });
+      console.log();
+      const socket = io(process.env.NEXT_PUBLIC_BACKEND as string, { transports: ['websocket'] });
       socket.on('data-source', setEntityData);
       setConnection(socket);
     }

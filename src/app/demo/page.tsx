@@ -1,8 +1,9 @@
 import Demo from './demo';
 import { Entity } from './table';
+import process from 'process';
 
 const getEntityList = async (): Promise<Entity[]> => {
-  const res = await fetch('http://localhost:3000/entity/list', {
+  const res = await fetch(process.env.NEXT_PUBLIC_BACKEND+'/entity/list', {
     cache: 'no-store',
   });
   if (!res.ok) {
