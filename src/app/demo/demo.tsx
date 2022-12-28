@@ -16,7 +16,6 @@ const Demo = ({ data }: { data: Entity[] }): JSX.Element => {
   const [entityData, setEntityData] = useState<string>();
   useEffect(() => {
     if (!connection) {
-      console.log();
       const socket = io(process.env.NEXT_PUBLIC_BACKEND as string, { transports: ['websocket'] });
       socket.on('data-source', setEntityData);
       setConnection(socket);

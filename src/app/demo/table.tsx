@@ -95,14 +95,12 @@ class Table {
   }
 
   public reset(): void {
-    console.log('reset');
     this.head = [];
     this.body = [];
     this.foot = [];
   }
 
   public load(data: Entity[]): void {
-    console.log('load data');
     const length = Object.entries(data).length;
     for (const [key, entity] of Object.entries(data)) {
       if (+key === 0) {
