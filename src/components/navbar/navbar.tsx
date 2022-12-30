@@ -6,7 +6,6 @@ import './navbar.css';
 
 const navItems = [
   { text: 'Home', href: '/' },
-  { text: 'Schema', href: '/schema' },
   { text: 'Demo', href: '/demo', prefetch: false },
 ];
 

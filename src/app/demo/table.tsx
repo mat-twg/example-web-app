@@ -9,7 +9,6 @@ import './table.css';
 import { contrast, rgba2rgb } from '../../helpers/color-helper';
 
 export type Entity = {
-  _id: string;
   name: string;
   params: Record<string, number>[];
   createdAt: Date;
