@@ -221,7 +221,7 @@ class Table {
 
   render(): JSX.Element {
     return (
-      <table className={'table table-dark table-bordered table-custom mt-3'}>
+      <table className={'table table-dark table-bordered table-custom mt-3 w-75 align-self-center'}>
         {this.renderHead()}
         {this.renderBody()}
         {this.renderFoot()}

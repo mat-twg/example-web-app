@@ -12,12 +12,9 @@
 
 .table-custom tbody tr td {
     transition: .2s;
+    padding-left: 0;
+    padding-right: 0;
     text-shadow: none;
-    min-width: 90px;
-}
-
-.table-custom thead tr th:first-child {
-    max-width: 90px;
 }
 
 .table-custom tfoot tr td {
