@@ -13,7 +13,10 @@
 .table-custom tbody tr td {
     transition: .2s;
     text-shadow: none;
-    width:90px;
+}
+
+.table-custom thead tr th:first-child {
+    max-width: 90px;
 }
 
 .table-custom tfoot tr td {
