@@ -3,7 +3,7 @@ import { Entity } from './table';
 import process from 'process';
 
 const getEntityList = async (): Promise<Entity[]> => {
-  const res = await fetch(process.env.NEXT_PUBLIC_BACKEND + '/entity/list', {
+  const res = await fetch(process.env.NEXT_PRIVATE_API + '/entity/list', {
     cache: 'no-store',
   });
   if (!res.ok) {
